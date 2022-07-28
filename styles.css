@@ -1,0 +1,450 @@
+/* BARRA DE NAVEGACIÓN BONITA */
+
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+body::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+/* ------------------------------------------------------ */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,500&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2b2c2c;
+    color: #ffff;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 32px;
+    /* Ver sobre el resto de elementos */
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: #1d1d1d53;
+}
+
+.navbar_logo {
+    color: #fbd214;
+    font-size: 2.75em;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.navbar_opciones {
+    width: 40%;
+    margin-right: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar_opciones_link {
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.25em;
+    position: relative;
+}
+
+.navbar_opciones_link::before {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #fbd214;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.3s ease-out;
+}
+
+.navbar_opciones_link:hover::before {
+    width: 80%;
+}
+
+.activo::before {
+    content: "";
+    height: 3px;
+    width: 80%;
+    background: #fbd214;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.3s ease-out;
+}
+
+.letra-gris {
+    color: #cccc;
+}
+
+.fondo-claro {
+    background-color: #303131;
+}
+
+.inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 72px 80px 0;
+}
+
+.inicio_titulo h1 {
+    font-size: 5.25em;
+    padding-bottom: 16px;
+}
+
+.inicio_titulo h2 {
+    font-size: 1.75em;
+}
+
+.inicio_imagen img {
+    width: 80vh;
+}
+
+.about {
+    min-height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 80px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.about_titulo {
+    width: 50%;
+    text-align: center;
+    font-size: 4.375em;
+}
+
+.about_descripcion {
+    width: 50%;
+    font-size: 1.25em;
+    line-height: 32px;
+}
+
+.boton-amarillo {
+    width: 180px;
+    height: 72px;
+    border-radius: 8px;
+    border: 2px solid #feb633;
+    color: #feb633;
+    background-color: transparent;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.boton-amarillo:hover {
+    color: #ffff;
+    background-color: #feb633;
+    transition: 0.3s;
+}
+
+.conocimientos {
+    padding: 40px 80px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.conocimientos_titulo h3, .contacto_titulo h3 {
+    text-align: center;
+    font-size: 3.25em;
+}
+
+.conocimientos_titulo p {
+    width: 100%;
+    text-align: center;
+    padding: 8px auto;
+    font-size: 1.5em;
+}
+
+.conocimientos_iconos {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;
+    margin-top: 24px;
+    font-size: 28px;
+}
+
+.iconos_card {
+    width: 8.5em;
+    margin-bottom: 24px;
+}
+
+.conocimientos_iconos img {
+    width: 33%;
+}
+
+.contacto {
+    padding: 40px 80px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contacto_datos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contacto_datos_titulo h4 {
+    text-align: center;
+    font-size: 2.75em;
+}
+
+.contacto_datos_detalles {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacto_datos_detalles h5 {
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+.contacto_datos_detalles a {
+    margin-top: 12px;
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+.letra-oro {
+    color: #fbd214;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 1360px) {
+    .inicio_titulo h1 {
+        font-size: 4.75em;
+        padding-bottom: 16px;
+    }
+    
+    .inicio_titulo h2 {
+        font-size: 1.5em;
+    }
+
+    .inicio_imagen img {
+        width: 70vh;
+    }
+    .iconos_card {
+        width: 7em;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .navbar_logo {
+        font-size: 2.5em;
+    }
+    
+    .navbar_opciones {
+        width: 50%;
+    }
+
+    .about {
+        padding: 40px 20px;
+        min-height: 0;
+    }
+    
+    .about_titulo {
+        width: 40%;
+        font-size: 3.75em;
+    }
+
+    .iconos_card {
+        width: 6em;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .inicio_titulo h1 {
+        font-size: 3.75em;
+    }
+
+    .inicio_titulo h2 {
+        font-size: 1.25em;
+    }
+
+    .inicio_imagen img {
+        width: 60vh;
+    }
+
+    .about_descripcion {
+        line-height: 28px;
+    }
+    
+    .conocimientos_iconos {
+        font-size: 1.5em;
+    }
+
+    .iconos_card {
+        width: 5.5em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar_logo {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_opciones {
+        width: 0;
+        display: none;
+    }
+    .about_titulo {
+        font-size: 2.5em;
+    }
+    .about_descripcion {
+        font-size: 1em;
+        line-height: 24px;
+    }
+    .boton-amarillo {
+        height: 56px;
+    }
+    .conocimientos_titulo h3, .contacto_titulo h3 {
+        text-align: center;
+        font-size: 2.5em;
+    }
+    .conocimientos_titulo p, .contacto_titulo p {
+        font-size: 1.25em;
+    }
+    .contacto_datos_titulo h4 {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    .inicio {
+        flex-wrap: wrap;
+        padding: 50px 20px 0;
+    }
+    .inicio_titulo {
+        width: 100%;
+        margin: 5% 0;
+        text-align: center;
+    }
+    .inicio_imagen {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .inicio_imagen img {
+        width: 300px;
+    }
+    .about {
+        display: inline-block;
+    }
+    .about_titulo, .about_descripcion {
+        text-align: left;
+        width: 80%;
+        margin: 12px auto;
+    }
+    .conocimientos_titulo h3, .conocimientos_titulo p {
+        text-align: left;
+    }
+    .iconos_card {
+        width: 6em;
+    }
+    .contacto_titulo {
+        margin-bottom: 12px;
+    }
+    .contacto_datos {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .contacto_datos_detalles {
+        min-height: 20vh;
+        justify-content: flex-start;
+        margin-top: 24px;
+    }
+    .contacto_datos_detalles a {
+        font-size: 1.1875em;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .inicio_titulo h1 {
+        font-size: 3.15em;
+        padding-bottom: 16px;
+    }
+    .conocimientos {
+        padding: 40px 60px;
+    }
+    .conocimientos_titulo h3, .contacto_titulo h3 {
+        font-size: 2.2em;
+        line-height: 0.9em;
+    }
+    .contacto {
+        padding: 40px 40px;
+    }
+    .conocimientos_iconos {
+        flex-wrap: wrap;
+        font-size: 1.25em;
+    }
+    .contacto_datos_titulo h4 {
+        font-size: 2em;
+    }
+    .about_descripcion {
+        line-height: 1.2em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .inicio_titulo h1 {
+        font-size: 2.5em;
+    }
+    .inicio_titulo h2 {
+        font-size: 1em;
+    }
+    .conocimientos_iconos {
+        font-size: 1em;
+    }
+    .contacto_titulo h3 {
+        font-size: 2em;
+    }
+    .contacto_datos_titulo h4 {
+        font-size: 1.75em;
+    }
+    .contacto_datos_detalles a {
+        font-size: 1em;
+    }
+}
